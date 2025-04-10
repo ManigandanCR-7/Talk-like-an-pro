@@ -2,13 +2,13 @@ function Dashboard({ onNavigate }) {
     return (
       <div className="page-transition container mx-auto px-4 py-8" data-id="rqqxm75rj" data-path="pages/Dashboard.js">
         <div className="mb-8" data-id="5ldx5u21y" data-path="pages/Dashboard.js">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2" data-id="2nblq15qb" data-path="pages/Dashboard.js">Welcome to Your daily Dashboard</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2" data-id="2nblq15qb" data-path="pages/Dashboard.js">Welcome to Your daily Dashboard - Cain</h2>
           <p className="text-gray-600" data-id="2vqhnr1fd" data-path="pages/Dashboard.js">Select one of the options below to access specific information.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-id="3r8sifxbv" data-path="pages/Dashboard.js">
           <DashboardCard
-            title="Daily Resources"
+            title="Your Daily Resources"
             icon="fa-book"
             description="Access your daily learning materials and resources."
             color="blue"
@@ -16,7 +16,7 @@ function Dashboard({ onNavigate }) {
   
           
           <DashboardCard
-            title="Score Card"
+            title="Your Score Card"
             icon="fa-chart-line"
             description="View your performance metrics and progress tracking."
             color="green"
@@ -24,7 +24,7 @@ function Dashboard({ onNavigate }) {
   
           
           <DashboardCard
-            title="Daily Quotes"
+            title="Your Daily Quotes"
             icon="fa-quote-right"
             description="Get inspired with motivational quotes updated daily."
             color="purple"
