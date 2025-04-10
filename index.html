@@ -1,44 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="manifest" href="/manifest.json" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talk like pro-dashboard</title>
-    
+    <title>Talk like pro</title>
+
     <!-- React and ReactDOM -->
     <script src="https://cdn.ezsite.ai/static/react.production.min.js"></script>
     <script src="https://cdn.ezsite.ai/static/react-dom.production.min.js"></script>
-    
+
     <!-- Babel -->
     <script src="https://cdn.ezsite.ai/static/babel.min.js"></script>
-    
+
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
-<script project-code="a21zjkupq6lz" src="https://ezsite.ai/ezsite-api.js"></script><script src="https://ezsite.ai/ezsite-chatbot.js"></script><meta name="description" content="Explore our interactive dashboard offering daily resources, scorecards, and motivational quotes. Click options to view detailed insights."><meta property="og:title" content="Discover Your Daily Dashboard - Resources, Scores, and Quotes"><meta property="og:description" content="Access a user-friendly dashboard featuring daily resources, scorecards, and quotes. Navigate seamlessly to explore detailed insights."><meta name="twitter:title" content="🌟 Your Daily Dashboard Awaits!"><meta name="twitter:description" content="Interactive dashboard with daily resources, scorecards, and quotes. Explore now for insights and inspiration!"></head>
+    <script project-code="a21zjkupq6lz" src="https://ezsite.ai/ezsite-api.js"></script>
+    <script src="https://ezsite.ai/ezsite-chatbot.js"></script>
+
+    <meta name="description" content="Explore our interactive dashboard offering daily resources, scorecards, and motivational quotes. Click options to view detailed insights.">
+    <meta property="og:title" content="Discover Your Daily Dashboard - Resources, Scores, and Quotes">
+    <meta property="og:description" content="Access a user-friendly dashboard featuring daily resources, scorecards, and quotes. Navigate seamlessly to explore detailed insights.">
+    <meta name="twitter:title" content="🌟 Your Daily Dashboard Awaits!">
+    <meta name="twitter:description" content="Interactive dashboard with daily resources, scorecards, and quotes. Explore now for insights and inspiration!">
+</head>
 <body class="bg-gray-100 min-h-screen">
     <div id="root"></div>
-    
+
     <!-- Component Scripts -->
     <script type="text/babel" src="components/Navbar.js"></script>
     <script type="text/babel" src="components/DashboardCard.js"></script>
     <script type="text/babel" src="components/Footer.js"></script>
-    
+
     <!-- Page Scripts -->
     <script type="text/babel" src="pages/Dashboard.js"></script>
     <script type="text/babel" src="pages/DailyResources.js"></script>
     <script type="text/babel" src="pages/ScoreCard.js"></script>
     <script type="text/babel" src="pages/DailyQuotes.js"></script>
-    
+
     <!-- Utils -->
     <script type="text/babel" src="utils/data.js"></script>
-    
+
     <!-- Main App -->
     <script type="text/babel" src="app.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('✅ Service Worker registered:', reg))
+                    .catch(err => console.error('❌ Service Worker registration failed:', err));
+            });
+        }
+    </script>
+
+    <!-- Cookie Consent Overlay + PWA Install -->
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function CookieConsent() {
+            const [accepted, setAccepted] = useState(false);
+
+            useEffect(() => {
+                const stored = localStorage.getItem('cookieAccepted');
+                if (stored === 'true') setAccepted(true);
+            }, []);
+
+            const handleAccept = () => {
+                localStorage.setItem('cookieAccepted', 'true');
+                setAccepted(true);
+
+                if (window.deferredPrompt) {
+                    window.deferredPrompt.prompt();
+                    window.deferredPrompt.userChoice.then(choice => {
+                        if (choice.outcome === 'accepted') {
+                            console.log('✅ App installed by user');
+                        }
+                    });
+                }
+            };
+
+            return !accepted ? (
+                <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border border-gray-300 shadow-lg p-4 rounded-md z-50 w-[95%] max-w-xl">
+                    <p className="text-gray-800 mb-3">
+                        We use cookies to improve your experience. By using our site, you accept our cookie policy.
+                    </p>
+                    <div className="text-right">
+                        <button
+                            onClick={handleAccept}
+                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow-md"
+                        >
+                            Accept & Install App
+                        </button>
+                    </div>
+                </div>
+            ) : null;
+        }
+
+        // Handle PWA install prompt
+        window.deferredPrompt = null;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e;
+        });
+
+        // Mount the overlay
+        const cookieContainer = document.createElement('div');
+        document.body.appendChild(cookieContainer);
+        ReactDOM.render(<CookieConsent />, cookieContainer);
+    </script>
 </body>
 </html>
