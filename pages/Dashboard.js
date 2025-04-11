@@ -41,7 +41,7 @@ function Dashboard({ onNavigate }) {
                 <i className="fas fa-book text-lg" data-id="r5atbkqoh" data-path="pages/Dashboard.js"></i>
               </div>
               <div data-id="vf3p43nfz" data-path="pages/Dashboard.js">
-                <h4 className="font-medium text-gray-800" data-id="2wbrb09wt" data-path="pages/Dashboard.js">New resource added: " day -1 Intro about professional "</h4>
+                <h4 className="font-medium text-gray-800" data-id="2wbrb09wt" data-path="pages/Dashboard.js">New resource added: " daily -Resources "</h4>
                 <p className="text-gray-600 text-sm" data-id="eg1lar8ai" data-path="pages/Dashboard.js">2 hours ago</p>
               </div>
             </div>
@@ -51,7 +51,7 @@ function Dashboard({ onNavigate }) {
                 <i className="fas fa-chart-line text-lg" data-id="ycr6ddtl1" data-path="pages/Dashboard.js"></i>
               </div>
               <div data-id="8aoqzrr0y" data-path="pages/Dashboard.js">
-                <h4 className="font-medium text-gray-800" data-id="hr8biqlew" data-path="pages/Dashboard.js">Score updated: +10 points</h4>
+                <h4 className="font-medium text-gray-800" data-id="hr8biqlew" data-path="pages/Dashboard.js">Score updated: +200 points</h4>
                 <p className="text-gray-600 text-sm" data-id="lv0bd8tif" data-path="pages/Dashboard.js">Yesterday</p>
               </div>
             </div>
