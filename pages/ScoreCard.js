@@ -2,7 +2,7 @@ function ScoreCard({ onBack }) {
     return (
       <div className="page-transition container mx-auto px-4 py-8 max-w-6xl" data-id="mrh0yao8i" data-path="pages/ScoreCard.js">
         <div className="flex justify-between items-center mb-6" data-id="zphomtidl" data-path="pages/ScoreCard.js">
-          <h2 className="text-2xl font-bold text-gray-800" data-id="s46juukfq" data-path="pages/ScoreCard.js">Score Card</h2>
+          <h2 className="text-2xl font-bold text-gray-800" data-id="s46juukfq" data-path="pages/ScoreCard.js">Your Score Card</h2>
           <button
             onClick={onBack}
             className="back-button flex items-center px-4 py-2 bg-gray-100 rounded-lg text-gray-700 hover:bg-gray-200" data-id="4gas56ajy" data-path="pages/ScoreCard.js">
@@ -20,11 +20,11 @@ function ScoreCard({ onBack }) {
                 <i className="fas fa-trophy" data-id="1gvbnoibf" data-path="pages/ScoreCard.js"></i>
               </span>
             </div>
-            <div className="text-4xl font-bold text-gray-800 mb-2" data-id="8vzh0arz7" data-path="pages/ScoreCard.js">500 pts</div>
+            <div className="text-4xl font-bold text-gray-800 mb-2" data-id="8vzh0arz7" data-path="pages/ScoreCard.js">800 pts</div>
             <div className="flex items-center text-green-600" data-id="ep2ru8w0v" data-path="pages/ScoreCard.js">
               <i className="fas fa-arrow-up mr-1" data-id="5vlpsznbi" data-path="pages/ScoreCard.js"></i>
               <span className="font-medium" data-id="2iui99igc" data-path="pages/ScoreCard.js">12%</span>
-              <span className="text-gray-500 text-sm ml-2" data-id="rxova8nwb" data-path="pages/ScoreCard.js">from last month</span>
+              <span className="text-gray-500 text-sm ml-2" data-id="rxova8nwb" data-path="pages/ScoreCard.js">from last day</span>
             </div>
           </div>
   
@@ -35,11 +35,11 @@ function ScoreCard({ onBack }) {
                 <i className="fas fa-check-circle" data-id="fcpklj2zh" data-path="pages/ScoreCard.js"></i>
               </span>
             </div>
-            <div className="text-4xl font-bold text-gray-800 mb-2" data-id="dxes5vq62" data-path="pages/ScoreCard.js">10</div>
+            <div className="text-4xl font-bold text-gray-800 mb-2" data-id="dxes5vq62" data-path="pages/ScoreCard.js">2</div>
             <div className="flex items-center text-green-600" data-id="v8pulexcp" data-path="pages/ScoreCard.js">
               <i className="fas fa-arrow-up mr-1" data-id="7x3qncq7g" data-path="pages/ScoreCard.js"></i>
               <span className="font-medium" data-id="itq4btslq" data-path="pages/ScoreCard.js">3%</span>
-              <span className="text-gray-500 text-sm ml-2" data-id="dey1wvb5k" data-path="pages/ScoreCard.js">from day 1</span>
+              <span className="text-gray-500 text-sm ml-2" data-id="dey1wvb5k" data-path="pages/ScoreCard.js">from day 2</span>
             </div>
           </div>
   
@@ -71,13 +71,13 @@ function ScoreCard({ onBack }) {
                   </div>
                   <div data-id="lwu39qzjq" data-path="pages/ScoreCard.js">
                     <h5 className="font-medium" data-id="yf3s0lwud" data-path="pages/ScoreCard.js">Resource Master</h5>
-                    <p className="text-sm text-gray-600" data-id="3iiumxeos" data-path="pages/ScoreCard.js">Complete 1 module</p>
+                    <p className="text-sm text-gray-600" data-id="3iiumxeos" data-path="pages/ScoreCard.js">Complete 2 module</p>
                   </div>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5" data-id="3ug9z0met" data-path="pages/ScoreCard.js">
-                  <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '10%' }} data-id="gekojw2x4" data-path="pages/ScoreCard.js"></div>
+                  <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '12%' }} data-id="gekojw2x4" data-path="pages/ScoreCard.js"></div>
                 </div>
-                <p className="text-xs text-gray-500 mt-1 text-right" data-id="0l55znh4t" data-path="pages/ScoreCard.js">10/100 completed</p>
+                <p className="text-xs text-gray-500 mt-1 text-right" data-id="0l55znh4t" data-path="pages/ScoreCard.js">12/100 completed</p>
               </div>
             </div>
           </div>
