@@ -3,8 +3,8 @@
 // Resources data
 const resourcesData = [
     {
-      title: "day -1 Intro about professional ",
-      description: "Learn the basics of resource management and organization.",
+      title: "daily Resources ",
+      description: "Learn the talk like an pro",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
       type: "Article",
       date: "Today"
