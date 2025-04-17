@@ -95,7 +95,7 @@ const resourcesData = [
       { id: 1, text: "The best way to predict the future is to create it", author: "Abraham Lincoln" },
       { id: 2, text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
       { id: 3, text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
-      { id: 4, text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" }],
+      { id: 4, text: "The only way to do great work is to love what you do.", author: "Steve Jobs" }],
     
       motivational: [
       { id: 5, text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
