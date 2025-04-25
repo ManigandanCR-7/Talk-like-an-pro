@@ -99,7 +99,7 @@ const resourcesData = [
     
       motivational: [
       { id: 5, text: "Don't watch the clock; do what it does. Keep going..", author: "Sam Levenson" },
-      { id: 6, text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+      { id: 6, text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
       { id: 7, text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
       { id: 8, text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" }],
     
