@@ -104,7 +104,7 @@ const resourcesData = [
       { id: 8, text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" }],
     
       all: [
-      { id: 9, text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney", category: "Action" },
+      { id: 9, text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius", category: "Action" },
       { id: 10, text: "Life is what happens when you're busy making other plans.", author: "John Lennon", category: "Life" },
       { id: 11, text: "The purpose of our lives is to be happy.", author: "Dalai Lama", category: "Happiness" },
       { id: 12, text: "You only live once, but if you do it right, once is enough.", author: "Mae West", category: "Life" },
