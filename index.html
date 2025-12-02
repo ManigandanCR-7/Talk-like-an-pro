@@ -1,58 +1,72 @@
-  # first line of code  
-
+<!-- Declares the document as HTML5 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Connects the PWA manifest file -->
     <link rel="manifest" href="/manifest.json" />
+
+    <!-- Basic metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
     <title>Talk like pro</title>
 
-    <!-- React and ReactDOM -->
+    <!-- Loads React library -->
     <script src="https://cdn.ezsite.ai/static/react.production.min.js"></script>
+
+    <!-- Loads ReactDOM for rendering React components -->
     <script src="https://cdn.ezsite.ai/static/react-dom.production.min.js"></script>
 
-    <!-- Babel -->
+    <!-- Babel enables JSX inside browser -->
     <script src="https://cdn.ezsite.ai/static/babel.min.js"></script>
 
-    <!-- TailwindCSS -->
+    <!-- TailwindCSS styling framework -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-    <!-- Custom Styles -->
+    <!-- Custom stylesheet -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- EZSite embedded script for project integration -->
     <script project-code="a21zjkupq6lz" src="https://ezsite.ai/ezsite-api.js"></script>
+
+    <!-- EZSite chatbot script -->
     <script src="https://ezsite.ai/ezsite-chatbot.js"></script>
 
+    <!-- SEO: Search engine and social media preview -->
     <meta name="description" content="Explore our interactive dashboard offering daily resources, scorecards, and motivational quotes. Click options to view detailed insights.">
     <meta property="og:title" content="Discover Your Daily Dashboard - Resources, Scores, and Quotes">
     <meta property="og:description" content="Access a user-friendly dashboard featuring daily resources, scorecards, and quotes. Navigate seamlessly to explore detailed insights.">
     <meta name="twitter:title" content="🌟 Your Daily Dashboard Awaits!">
     <meta name="twitter:description" content="Interactive dashboard with daily resources, scorecards, and quotes. Explore now for insights and inspiration!">
 </head>
+
 <body class="bg-gray-100 min-h-screen">
+    <!-- React mounts here -->
     <div id="root"></div>
 
-    <!-- Component Scripts -->
+    <!-- React component scripts -->
     <script type="text/babel" src="components/Navbar.js"></script>
     <script type="text/babel" src="components/DashboardCard.js"></script>
     <script type="text/babel" src="components/Footer.js"></script>
 
-    <!-- Page Scripts -->
+    <!-- React page scripts -->
     <script type="text/babel" src="pages/Dashboard.js"></script>
     <script type="text/babel" src="pages/DailyResources.js"></script>
     <script type="text/babel" src="pages/ScoreCard.js"></script>
     <script type="text/babel" src="pages/DailyQuotes.js"></script>
 
-    <!-- Utils -->
+    <!-- Utility data file -->
     <script type="text/babel" src="utils/data.js"></script>
 
-    <!-- Main App -->
+    <!-- Main React App initializer -->
     <script type="text/babel" src="app.js"></script>
 
-    <!-- Service Worker Registration -->
+    <!-- Registers the service worker for PWA offline support -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -63,22 +77,26 @@
         }
     </script>
 
-    <!-- Cookie Consent Overlay + PWA Install -->
+    <!-- Cookie consent popup + PWA install handler -->
     <script type="text/babel">
-        const { useState, useEffect } = React;
+        const { useState, useEffect } = React;  // React hooks
 
+        // Component showing cookie popup
         function CookieConsent() {
-            const [accepted, setAccepted] = useState(false);
+            const [accepted, setAccepted] = useState(false); // Track acceptance
 
+            // Loads stored cookie state
             useEffect(() => {
                 const stored = localStorage.getItem('cookieAccepted');
                 if (stored === 'true') setAccepted(true);
             }, []);
 
+            // On accept: store decision + trigger PWA install prompt
             const handleAccept = () => {
                 localStorage.setItem('cookieAccepted', 'true');
                 setAccepted(true);
 
+                // Trigger PWA install if available
                 if (window.deferredPrompt) {
                     window.deferredPrompt.prompt();
                     window.deferredPrompt.userChoice.then(choice => {
@@ -89,6 +107,7 @@
                 }
             };
 
+            // UI for cookie popup
             return !accepted ? (
                 <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border border-gray-300 shadow-lg p-4 rounded-md z-50 w-[95%] max-w-xl">
                     <p className="text-gray-800 mb-3">
@@ -106,18 +125,19 @@
             ) : null;
         }
 
-        // Handle PWA install prompt
+        // PWA install event stored for later use
         window.deferredPrompt = null;
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             window.deferredPrompt = e;
         });
 
-        // Mount the overlay
+        // Creates container for cookie popup
         const cookieContainer = document.createElement('div');
         document.body.appendChild(cookieContainer);
+
+        // Renders cookie popup
         ReactDOM.render(<CookieConsent />, cookieContainer);
     </script>
 </body>
 </html>
-
